@@ -2,7 +2,7 @@
 
 Reglas de trabajo en equipo para este repositorio. Somos 4 personas, así que seguimos este flujo para evitar pisarnos el código entre nosotros.
 
-## 1. Antes de empezar (una sola vez por persona)
+## 1. Antes de empezar si aun no configuras tu entorno de usuario y correo en GIT, ejecuta todos. Si ya tienes tu usuario y correo simplemente ejecuta el primero y clona el repositior en alguna carpeta local
 
 ```bash
 git clone https://github.com/blackcyber-cyber/PROGRAMACION_AVANZADA.git
