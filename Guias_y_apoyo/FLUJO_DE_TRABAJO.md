@@ -30,38 +30,7 @@ git checkout -b feature/nombre-de-la-funcionalidad
 
 **Evita:** `feature/hugo2`, `prueba`, `nueva-rama` — no dicen nada de qué trata.
 
-## 3. Mientras programas: guarda avances seguido
-
-No esperes a terminar todo el módulo para hacer commit. Divide tu trabajo en avances pequeños y guarda seguido:
-
-```bash
-git add .
-git commit -m "prefijo: descripción clara de qué hiciste"
-```
-
-### Prefijos de commit a usar
-
-| Prefijo | Cuándo usarlo |
-|---|---|
-| `feat:` | Agregas una funcionalidad nueva |
-| `fix:` | Corriges un error |
-| `test:` | Agregas o corriges pruebas |
-| `docs:` | Cambios solo en documentación |
-| `refactor:` | Reordenas código sin cambiar su función |
-
-**Ejemplo real:**
-```bash
-git commit -m "feat: agrega funcion deteccion_bordes - probada con imagenes de prueba"
-```
-
-Si algo quedó a medias, dilo en el código con un comentario:
-```python
-# TODO: falta manejar el caso cuando la imagen es nula
-# FIXME: esta funcion falla con numeros negativos
-# WIP: en progreso, no usar todavia
-```
-
-## 4. Subir tus avances
+## 3. Subir tus avances
 
 ```bash
 git push
@@ -69,27 +38,27 @@ git push
 
 (La primera vez que subes una rama nueva, usa `git push -u origin nombre-de-tu-rama`.)
 
-## 5. Cuando termines tu funcionalidad completa: abre un Pull Request
+## 4. Cuando termines tu funcionalidad completa: abre un Pull Request
 
 1. Ve a GitHub → pestaña **Pull requests** → **New pull request**.
 2. Verifica `base: main` ← `compare: tu-rama`.
 3. Describe brevemente qué hace tu código y si ya lo probaste.
 4. Espera que otro compañero (no tú mismo) lo revise y apruebe.
 
-## 6. Revisar el trabajo de otros
+## 5. Revisar el trabajo de otros
 
 1. Entra a **Pull requests**, abre el PR de tu compañero.
 2. Ve a **Files changed**, lee el código.
 3. Si algo no está bien, comenta directo en la línea (ícono `+` azul al pasar el mouse).
 4. Arriba a la derecha: **Review changes** → elige **Comment**, **Approve**, o **Request changes**.
 
-## 7. Mergear a main
+## 6. Mergear a main
 
 Una vez aprobado el PR:
 1. Ve a la pestaña **Conversation**.
 2. Clic en **Merge pull request** → **Confirm merge**.
 
-## 8. Después de cada merge: todos actualizan
+## 7. Después de cada merge: todos actualizan
 
 Avisen en el chat del equipo cuando algo se mergea, y cada quien corre:
 
@@ -100,7 +69,7 @@ git checkout tu-rama
 git merge main
 ```
 
-## 9. Marcar versiones importantes (tags)
+## 8. Marcar versiones importantes (tags)
 
 Cuando lleguen a un punto importante (un avance funcional, una entrega al profesor), marquen esa versión. Esto lo hace normalmente quien coordina el repo, una vez que todo lo necesario ya está en `main`:
 
@@ -111,10 +80,6 @@ git tag -a v0.2-nombre-del-hito -m "Descripción breve de qué se logró"
 git push origin v0.2-nombre-del-hito
 ```
 
-**Ejemplos de nombres de tag:**
-- `v0.1-organizacion-completa`
-- `v0.5-modulo-vision-funcional`
-- `v1.0-entrega-parcial`
 
 Ver todos los tags:
 ```bash
@@ -123,7 +88,7 @@ git tag
 
 En GitHub aparecen en la pestaña **Tags**, junto a Branches.
 
-## 10. Si necesitas ver o recuperar una versión anterior
+## 9. Si necesitas ver o recuperar una versión anterior
 
 **Ver el historial de un archivo específico:**
 ```bash
@@ -151,7 +116,7 @@ git checkout v0.1-organizacion-completa
 git revert <hash-del-commit>
 ```
 
-## 11. Si hay conflictos al hacer merge
+## 10. Si hay conflictos al hacer merge
 
 Git te va a marcar en el archivo algo así:
 
