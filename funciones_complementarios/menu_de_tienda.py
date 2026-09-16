@@ -4,7 +4,7 @@ Created on Wed Sep 16 13:03:35 2026
 
 @author: hugoc
 """
-
+"Modulo de menu, para mostrar una interfaz por terminal interactiva para hacer todas las acciones, catalogo, carrito, total, y registro de ventas"
 # -*- coding: utf-8 -*-
 import catalogo
 import registro_ventas
@@ -60,7 +60,7 @@ def ejecutar_menu():
                         lista_productos.append((id_p, cantidad))
                         print(f"👍Producto agregado: {producto['nombre']} x{cantidad}")
                     else:
-                        print("  ❌ No hay suficiente stock.")
+                        print("  ❌ No existen suficientes productos.")
                 else:
                     print("  ❌ Producto no encontrado.")
 
@@ -69,7 +69,7 @@ def ejecutar_menu():
                 ticket = registro_ventas.generar_ticket(lista_productos, micatalogo, total_venta)
                 registro_ventas.guardar_historial_ventas(historial_ventas, ticket)
             else:
-                print("⚠️ Venta cancelada (sin productos).")
+                print("Venta cancelada (sin productos).")
 
         # OPCIÓN 3: Mostrar ventas realizadas
         elif opcion == "3":
@@ -78,6 +78,7 @@ def ejecutar_menu():
                 print("Aún no hay ventas registradas.")
             else:
                 for folio, fecha, total in historial_ventas:
+                    print("-" * 60)
                     print(f"Folio: {folio} | Fecha: {fecha} | Total: ${total:.2f}")
 
         # OPCIÓN 0: Salir del programa
