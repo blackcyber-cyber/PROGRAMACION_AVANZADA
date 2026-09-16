@@ -14,7 +14,11 @@ def cargar_catalogo():
         "P005": {"nombre": "🫗Agua embotellada", "precio": 16.0, "stock": 60},
         "P006": {"nombre": "🥤Refresco 2L", "precio": 29.5, "stock": 40},
         "P007": {"nombre": "🍟Sabritas", "precio": 20.0, "stock": 70},
+<<<<<<< Updated upstream
         "P008": {"nombre": "🍬Dulces", "precio": 3.0, "stock": 80}
+=======
+        "P008": {"nombre": "🍬Dulces", "precio": 3.0, "stock": 80},
+>>>>>>> Stashed changes
     }
     return catalogo
 
