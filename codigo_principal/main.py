@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 """
+Created on Wed Sep 16 13:03:35 2026
+
+@author: hugoc
+"""
+"""
 Módulo principal del punto de venta.
-Ejecución lineal sin funciones ni bloques __main__.
 """
 
 import catalogo
@@ -16,14 +20,14 @@ historial_ventas = []
 
 # 2. Bucle principal del menú
 while True:
-    print("\n\033[34m" + "🏪TIENDA PARANGARICUTIRIMICUARO🏪".center(40) + "\033[0m")
+    print("\n\033[34m" + "🏪BIENVENIDO A TIENDA PARANGARICUTIRIMICUARO🏪".center(40) + "\033[0m")
     print("-" * 40)
     print("🏪🏪🏪 MENÚ PRINCIPAL 🏪🏪🏪")
     print("1.🛍️ Ver catálogo de productos")
     print("2.➕ Agregar producto al carrito")
     print("3.➖ Eliminar producto del carrito")
     print("4.🛒 Ver carrito")
-    print("5.💳 Cerrar venta (aplicar descuento y cobrar)")
+    print("5.💳 Cerrar venta y aplicar descuento")
     print("6.🧾 Ver historial de ventas")
     print("0.🔚 Salir")
     print("-" * 40)
@@ -89,9 +93,7 @@ while True:
 
             total_venta = descuentos.aplicar_descuento(subtotal, tipo_descuento)
 
-            ticket = registro_ventas.generar_ticket(
-                lista_productos, micatalogo, total_venta
-            )
+            ticket = registro_ventas.generar_ticket(lista_productos, micatalogo, total_venta)
 
             if ticket is not None:
                 registro_ventas.guardar_historial_ventas(historial_ventas, ticket)
