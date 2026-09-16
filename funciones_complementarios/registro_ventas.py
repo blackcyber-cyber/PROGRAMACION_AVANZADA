@@ -1,29 +1,18 @@
 # -*- coding: utf-8 -*-
 """
 Módulo de registro de ventas y generación de tickets.
-
-Estructura de datos: tupla.
-Se eligió tupla porque un ticket ya emitido es un registro histórico
-que NO debe modificarse después de creado (folio, fecha y total son
-inmutables una vez que la venta se cerró).
 """
 
 from datetime import date
-
 # Contador simple para generar folios consecutivos.
 contador_folios = 0
-
-
 def generar_folio():
     """Genera un folio único incremental tipo F001, F002, etc."""
     global contador_folios
     contador_folios += 1
     return f"F{contador_folios:05d}"
 
-
 def pago_carrito(total_efectivo):
-    """Solicita el pago en efectivo y calcula el cambio correspondiente."""
-    
     while True:
         try:
             efectivo = float(input("¿Con cuánto pagará?: $"))
@@ -34,7 +23,6 @@ def pago_carrito(total_efectivo):
             return efectivo, cambio
         except ValueError:
             print("Por favor, ingrese un número válido.")
-
 
 def generar_ticket(carrito, catalogo, total):
     """Genera un ticket de venta inmutable y muestra el resumen."""
@@ -49,11 +37,10 @@ def generar_ticket(carrito, catalogo, total):
     print("\n"* 4 + "-" * 40)
     print("\033[3;34m" + "TIENDA PARANGARICUTIRIMICUARO".center(40) + "\033[0m")
     print("-" * 40)
-    print("\033[34m" + "TICKET DE VENTA".center(40) + "\033[0m")
-    print("\033[1m" + f"Folio: {folio}".center(40) + "\033[0m")
-    print("\033[1m" + f"Fecha: {fecha}".center(40) + "\033[0m")
+    print("\033[34m" + "  TICKET DE VENTA".center(40) + "\033[0m")
+    print("\033[1m" + f"  Folio: {folio} ".center(40) + "\033[0m")
+    print("\033[1m" + f"  Fecha: {fecha} ".center(40) + "\033[0m")
     print("-" * 40)
-
     # Mostrar productos en el carrito
     for id_producto, cantidad in carrito:
         producto = catalogo.get(id_producto)
@@ -78,7 +65,6 @@ def generar_ticket(carrito, catalogo, total):
     # Registro inmutable
     registro_venta = (folio, fecha, total)
     return registro_venta
-
 
 def guardar_historial_ventas(historial, registro_venta):
     """Agrega un registro de venta a la lista de historial general."""
