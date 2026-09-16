@@ -4,7 +4,7 @@ Created on Wed Sep 16 13:03:35 2026
 
 @author: hugoc
 """
-
+"Modulo de menu, para mostrar una interfaz por terminal interactiva para hacer todas las acciones, catalogo, carrito, total, y registro de ventas"
 # -*- coding: utf-8 -*-
 import catalogo
 import registro_ventas
@@ -69,7 +69,7 @@ def ejecutar_menu():
                 ticket = registro_ventas.generar_ticket(lista_productos, micatalogo, total_venta)
                 registro_ventas.guardar_historial_ventas(historial_ventas, ticket)
             else:
-                print("⚠️ Venta cancelada (sin productos).")
+                print("Venta cancelada (sin productos).")
 
         # OPCIÓN 3: Mostrar ventas realizadas
         elif opcion == "3":
