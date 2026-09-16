@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
 """
+Created on Wed Sep 16 13:03:35 2026
+
+@author: hugoc
+"""
+"""
 Módulo de catálogo de productos.
 """
 
