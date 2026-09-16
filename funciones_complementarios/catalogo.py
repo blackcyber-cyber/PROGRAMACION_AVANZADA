@@ -14,6 +14,7 @@ def cargar_catalogo():
         "P006": {"nombre": "🥤Refresco 2L", "precio": 29.5, "stock": 40},
         "P007": {"nombre": "🍟Sabritas", "precio": 20.0, "stock": 70},
         "P008": {"nombre": "🍬Dulces", "precio": 3.0, "stock": 80}
+        "P008": {"nombre": "🍬Dulces", "precio": 3.0, "stock": 80}
     }
     return catalogo
 
