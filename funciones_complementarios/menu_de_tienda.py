@@ -78,6 +78,7 @@ def ejecutar_menu():
                 print("Aún no hay ventas registradas.")
             else:
                 for folio, fecha, total in historial_ventas:
+                    print("-" * 60)
                     print(f"Folio: {folio} | Fecha: {fecha} | Total: ${total:.2f}")
 
         # OPCIÓN 0: Salir del programa
