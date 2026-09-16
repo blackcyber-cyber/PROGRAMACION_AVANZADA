@@ -1,7 +1,12 @@
 # -*- coding: utf-8 -*-
 """
+Created on Wed Sep 16 13:03:35 2026
+
+@author: hugoc
+"""
+"""
 Módulo principal del punto de venta.
-Ejecución lineal sin funciones ni bloques __main__.
+
 """
 
 import catalogo
@@ -23,7 +28,7 @@ while True:
     print("2.➕ Agregar producto al carrito")
     print("3.➖ Eliminar producto del carrito")
     print("4.🛒 Ver carrito")
-    print("5.💳 Cerrar venta (aplicar descuento y cobrar)")
+    print("5.💳 Cerrar venta y aplicar descuento y cobrar")
     print("6.🧾 Ver historial de ventas")
     print("0.🔚 Salir")
     print("-" * 40)
