@@ -84,5 +84,5 @@ def buscar_producto(catalogo, id_producto):
 # Bloque de prueba: se ejecuta solo si corres este archivo directamente,
 # no cuando alguien más lo importa con "import catalogo"
 if __name__ == "__main__":
-    mi_catalogo = cargar_catalogo()
-    mostrar_catalogo(mi_catalogo)
+    el_catalogo = cargar_catalogo()
+    mostrar_catalogo(el_catalogo)
