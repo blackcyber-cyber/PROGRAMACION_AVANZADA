@@ -1,69 +1,31 @@
-# Guía rápida para empezar a colaborar (para los 3 compañeros nuevos)
+# Guía rápida para empezar a colaborar
 
 ## Paso 0: Requisitos previos
 - Tener **Git** instalado (descarga en git-scm.com si no lo tienen).
 - Tener **Python** y **Spyder** instalados (Anaconda los incluye a ambos).
 - Tener cuenta de **GitHub** y haber aceptado la invitación como colaborador que Hugo les envió.
 
-Verifica que Git esté instalado:
-```bash
-git --version
-```
 
-## Paso 1: Configura tu identidad en Git (solo la primera vez en tu PC)
-
-```bash
-git config --global user.name "Tu Nombre"
-git config --global user.email "tu_correo@ejemplo.com"
-```
-
-Si ya lo hiciste antes en esta computadora (para otro proyecto), sáltate este paso.
-
-## Paso 2: Clona el repositorio
+## Paso 1: Clona el repositorio
 
 Abre Git Bash, ubícate en una carpeta VACÍA donde quieras guardar el proyecto y ejecuta:
 
-```bash
-git clone https://github.com/blackcyber-cyber/PROGRAMACION_AVANZADA.git
-cd PROGRAMACION_AVANZADA
-# Guía rápida para empezar a colaborar (para los 3 compañeros nuevos)
- 
-## Paso 0: Requisitos previos
-- Tener **Git** instalado (descarga en git-scm.com si no lo tienen).
-- Tener **Python** y **Spyder** instalados (Anaconda los incluye a ambos).
-- Tener cuenta de **GitHub** y haber aceptado la invitación como colaborador que Hugo les envió.
-Verifica que Git esté instalado:
-```bash
-git --version
-```
- 
-## Paso 1: Configura tu identidad en Git (solo la primera vez en tu PC)
- 
-```bash
-git config --global user.name "Tu Nombre"
-git config --global user.email "tu_correo@ejemplo.com"
-```
- 
-Si ya lo hiciste antes en esta computadora (para otro proyecto), sáltate este paso.
- 
-## Paso 2: Clona el repositorio
- 
-Abre Git Bash, ubícate en una carpeta VACÍA donde quieras guardar el proyecto y ejecuta:
  
 ```bash
 git clone https://github.com/blackcyber-cyber/PROGRAMACION_AVANZADA.git
 cd PROGRAMACION_AVANZADA
 ```
  
-## Paso 3: Crea tu propia rama
+## Paso 2: Crea tu propia rama
  
 **Nunca trabajes directo sobre `main`.** Crea tu rama personal:
  
 ```bash
-git checkout -b feature/tu-nombre
+git checkout -b feature/nombre_o_funcion
+#Recordar que solo se hace una rama ppor trabajo, es decir que si te toca el tema "Catalogo" y "tickest" deberas crear dos rmas una para cada una
 ```
  
-Ejemplo real: `git checkout -b feature/ana`
+Ejemplo real: `git checkout -b feature/carrito_de_compras`
  
 ## Estructura del repositorio
  
@@ -80,7 +42,7 @@ PROGRAMACION_AVANZADA/
  
 **Guarda tu código en la carpeta que corresponda según su función. No dejes archivos `.py` sueltos en la raíz del proyecto.**
  
-## Paso 4: Abre la carpeta en Spyder
+## Paso 3: Abre la carpeta en Spyder
  
 - En Spyder: **Archivo > Abrir**, navega a la carpeta `PROGRAMACION_AVANZADA` que acabas de clonar.
 - Crea o edita tus archivos `.py` **dentro de la subcarpeta que corresponda** (`codigo_principal/` o `funciones_complementarios/`), no sueltos en la raíz.
@@ -109,30 +71,30 @@ git push -u origin feature/tu-nombre
 ```
 Sube tu rama a GitHub (solo la **primera vez**; después basta con `git push`).
  
-## Paso 6: Abre un Pull Request en GitHub
+## Paso 4: Abre un Pull Request en GitHub
  
 1. Entra a https://github.com/blackcyber-cyber/PROGRAMACION_AVANZADA
 2. Verás un aviso para crear un PR desde tu rama recién subida — dale clic a **"Compare & pull request"**.
 3. Verifica que diga `base: main` ← `compare: feature/tu-nombre`.
 4. Pon un título y describe brevemente qué hiciste.
 5. Dale clic a **"Create pull request"**.
-## Paso 7: Espera revisión (o revisa el de otro)
+## Paso 5: Espera revisión (o revisa el de otro)
  
 - Alguien más del equipo (no tú mismo) debe revisar tu PR en la pestaña **"Files changed"** y aprobarlo.
 - Si te toca revisar el de alguien más, entra al PR, revisa el código, y si está bien, aprueba.
-## Paso 8: Mergear a main
+## Paso 6: Mergear a main
  
 Una vez aprobado, en la pestaña **"Conversation"** del PR:
 1. Clic en **"Merge pull request"**.
 2. Clic en **"Confirm merge"**.
-## Paso 9: Actualiza tu copia local después del merge
+## Paso 7: Actualiza tu copia local después del merge
  
 ```bash
 git checkout main
 git pull
 ```
  
-## Paso 10: Para seguir trabajando después
+## Paso 8: Para seguir trabajando después
  
 Cada vez que empieces a programar de nuevo:
  
