@@ -1,24 +1,14 @@
 # -*- coding: utf-8 -*-
 """
 Módulo de catálogo de productos.
-
-Estructura de datos: diccionario de diccionarios.
-Se eligió esta estructura porque cada producto necesita varios
-atributos (nombre, precio, stock) accesibles por su clave única
-(id_producto), permitiendo búsqueda directa en O(1) sin recorrer
-listas.
 """
 
 
 def cargar_catalogo():
     """
-    Carga el catálogo de productos disponibles.
-
-    Retorna:
-        dict: diccionario de diccionarios con la forma
-              {"id_producto": {"nombre": str, "precio": float, "stock": int}}
     """
     catalogo = {
+<<<<<<< Updated upstream
         "P001": {"nombre": "Café", "precio": 20.0, "stock": 20},
         "P002": {"nombre": "Té", "precio": 25.0, "stock": 20},
         "P003": {"nombre": "Galletas", "precio": 24.0, "stock": 40},
@@ -27,6 +17,16 @@ def cargar_catalogo():
         "P006": {"nombre": "Refresco 2L", "precio": 29.5, "stock": 40},
         "P007": {"nombre": "Sabritas", "precio": 20.0, "stock": 70},
         "P008": {"nombre": "Dulces", "precio": 3.0, "stock": 80},
+=======
+        "P001": {"nombre": "🍵Café", "precio": 20.0, "stock": 20},
+        "P002": {"nombre": "🫖Té", "precio": 25.0, "stock": 20},
+        "P003": {"nombre": "🍪Galletas", "precio": 24.0, "stock": 40},
+        "P004": {"nombre": "🍫Chocolate", "precio": 50.5, "stock": 10},
+        "P005": {"nombre": "🫗Agua embotellada", "precio": 16.0, "stock": 60},
+        "P006": {"nombre": "🥤Refresco 2L", "precio": 29.5, "stock": 40},
+        "P007": {"nombre": "🍟Sabritas", "precio": 20.0, "stock": 70},
+        "P008": {"nombre": "🍬Dulces", "precio": 3.0, "stock": 80},
+>>>>>>> Stashed changes
     }
     return catalogo
 
@@ -34,12 +34,6 @@ def cargar_catalogo():
 def mostrar_catalogo(catalogo):
     """
     Imprime una tabla con los productos disponibles.
-
-    Parámetros:
-        catalogo (dict): diccionario de diccionarios de productos.
-
-    Retorna:
-        None
     """
     print("\n" + "=" * 50)
     print(f"{'ID':<6}{'PRODUCTO':<20}{'PRECIO':<10}{'STOCK':<6}")
@@ -67,13 +61,6 @@ def mostrar_catalogo(catalogo):
 def buscar_producto(catalogo, id_producto):
     """
     Verifica si un producto existe en el catálogo.
-
-    Parámetros:
-        catalogo (dict): catálogo de productos.
-        id_producto (str): clave del producto a buscar.
-
-    Retorna:
-        dict o None: los datos del producto si existe, None si no.
     """
     if id_producto in catalogo:
         return catalogo[id_producto]
