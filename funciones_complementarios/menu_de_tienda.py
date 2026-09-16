@@ -58,7 +58,7 @@ def ejecutar_menu():
                         
                         # Guardamos en la lista
                         lista_productos.append((id_p, cantidad))
-                        print(f"👍Producto agregado: {producto['nombre']} x{cantidad}")
+                        print(f"Producto agregado: {producto['nombre']} x{cantidad}")
                     else:
                         print("  ❌ No hay suficiente stock.")
                 else:
