@@ -18,7 +18,6 @@ def cargar_catalogo():
         "P008": {"nombre": "🍬Dulces", "precio": 3.0, "stock": 80}
 =======
         "P008": {"nombre": "🍬Dulces", "precio": 3.0, "stock": 80},
->>>>>>> Stashed changes
     }
     return catalogo
 
