@@ -1,85 +1,73 @@
 # -*- coding: utf-8 -*-
 """
 Módulo de registro de ventas y generación de tickets.
-
-Estructura de datos: tupla.
-Se eligió tupla porque un ticket ya emitido es un registro histórico
-que NO debe modificarse después de creado (folio, fecha y total son
-inmutables una vez que la venta se cerró).
 """
 
 from datetime import date
-
 # Contador simple para generar folios consecutivos.
-# En un programa más grande, esto vendría de una base de datos.
-_contador_folios = 0
+contador_folios = 0
+def generar_folio():
+    """Genera un folio único incremental tipo F001, F002, etc."""
+    global contador_folios
+    contador_folios += 1
+    return f"F{contador_folios:05d}"
 
-
-def _generar_folio():
-    """
-    Genera un folio único incremental tipo F001, F002, etc.
-
-    Retorna:
-        str: folio generado.
-    """
-    global _contador_folios
-    _contador_folios += 1
-    return f"F{_contador_folios:03d}"
-
+def pago_carrito(total_efectivo):
+    while True:
+        try:
+            efectivo = float(input("¿Con cuánto pagará?: $"))
+            if efectivo < total_efectivo:
+                print(f"Monto insuficiente. El total es de ${total_efectivo:.2f}")
+                continue
+            cambio = efectivo - total_efectivo
+            return efectivo, cambio
+        except ValueError:
+            print("Por favor, ingrese un número válido.")
 
 def generar_ticket(carrito, catalogo, total):
-    """
-    Genera un ticket de venta inmutable y muestra el resumen.
-
-    Parámetros:
-        carrito (list): lista de tuplas (id_producto, cantidad).
-        catalogo (dict): catálogo de productos para obtener nombres/precios.
-        total (float): total ya calculado con descuentos aplicados.
-
-    Retorna:
-        tuple: registro inmutable de la venta con la forma
-               (folio, fecha, total)
-    """
+    """Genera un ticket de venta inmutable y muestra el resumen."""
     if not carrito:
         print("No se puede generar un ticket: el carrito está vacío.")
         return None
+    print(f"El total a pagar es de  ${total:.2f}")
+    efectivo, cambio = pago_carrito(total)
+    folio = generar_folio()
+    fecha = date.today().isoformat()
 
-    folio = _generar_folio()
-    fecha = date.today().isoformat()  # ej. "2026-09-15"
-
-    print("\n" + "-" * 40)
-    print(f"TICKET DE VENTA  Folio: {folio}")
-    print(f"Fecha: {fecha}")
+    print("\n"* 4 + "-" * 40)
+    print("\033[3;34m" + "TIENDA PARANGARICUTIRIMICUARO".center(40) + "\033[0m")
     print("-" * 40)
-
-    # Iteración con for para mostrar cada producto vendido
+    print("\033[34m" + "  TICKET DE VENTA".center(40) + "\033[0m")
+    print("\033[1m" + f"  Folio: {folio} ".center(40) + "\033[0m")
+    print("\033[1m" + f"  Fecha: {fecha} ".center(40) + "\033[0m")
+    print("-" * 40)
+    # Mostrar productos en el carrito
     for id_producto, cantidad in carrito:
         producto = catalogo.get(id_producto)
         if producto is not None:
             subtotal_linea = producto["precio"] * cantidad
-            print(f"{producto['nombre']:<20} x{cantidad:<3} "
-                  f"${subtotal_linea:.2f}")
+            nombre = producto['nombre']
+            print(f"\033[90m {nombre:<20} x{cantidad:<3} ${subtotal_linea:.2f}\033[0m")
 
     print("-" * 40)
     print(f"TOTAL: ${total:.2f}")
+    print("-" * 40)
+    print("Pago en efectivo".center(40))
+    # Proceso de pago (se llama una sola vez)
+    print(f"Efectivo: ${efectivo:.2f}")
+    print(f"Cambio:   ${cambio:.2f}")
+    print("-" * 40 )
+    print("\033[7;32m" + "PRODUCTOS PAGADOS".rjust(40) + "\033[0m")
+    print("-" * 40 )
+    print("\033[34m" + "GRACIAS POR SU COMPRA".center(40) + "\033[0m")
     print("-" * 40 + "\n")
 
-    # Tupla inmutable: una vez generado el ticket, no se puede alterar
+    # Registro inmutable
     registro_venta = (folio, fecha, total)
     return registro_venta
 
-
 def guardar_historial_ventas(historial, registro_venta):
-    """
-    Agrega un registro de venta a la lista de historial general.
-
-    Parámetros:
-        historial (list): lista donde se acumulan las tuplas de venta.
-        registro_venta (tuple): tupla (folio, fecha, total) a agregar.
-
-    Retorna:
-        list: historial actualizado.
-    """
+    """Agrega un registro de venta a la lista de historial general."""
     if registro_venta is not None:
         historial.append(registro_venta)
     return historial
