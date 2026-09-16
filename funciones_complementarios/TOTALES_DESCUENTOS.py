@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 """
 Esta rama es encargada de crear y validar los totales, descuentos
@@ -10,8 +11,13 @@ Rama encargada de:
 """
  
 from datetime import date
+
  
 # Reglas de descuento:
+
+'''Reglas de descuento:'''
+
+
 DESCUENTO = {
     "Remate": 0.50,
     "Porcentaje": 0.40,
@@ -43,6 +49,8 @@ def calcular_subtotal(carrito, catalogo):
     return subtotal
 
 
+    Subtotal = 0.0
+
 def aplicar_descuento(subtotal, tipo_de_descuento):
     """
     Se aplicaran los descuentos sobre el subtotal de la compra.
@@ -58,6 +66,7 @@ def aplicar_descuento(subtotal, tipo_de_descuento):
     if subtotal <= 0:
         print("No hay descuento aplicado a su compra, favor de elegir productos")
         return 0.0
+
 
 # Condiciones para aplicar descuentos
 
@@ -77,3 +86,18 @@ def aplicar_descuento(subtotal, tipo_de_descuento):
              
              
     
+
+    if not carrito:
+        print("El carrito está vacío: Subtotal igual a 0")
+        return Subtotal
+
+#Verificación de los productos del carrito
+    for id_producto, cantidad in carrito:
+        if id_producto in catalogo:
+            precio = catalogo[id_producto]['precio']
+            Subtotal += precio * cantidad
+        else:
+        # Comprobación para saber si hay stock de los productos
+            print(f"Aviso: EL producto{id_producto} que selecciono no existe")
+    return Subtotal
+
