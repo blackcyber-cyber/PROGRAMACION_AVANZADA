@@ -5,11 +5,11 @@ REPOSITORIO DE USO PARA MATERIA DE PROGRAMACIÓN AVANZADA
 
 * **Integrantes y Roles:**
   * **Hugo Cristian Reyes Urbano** Integrador – *Módulos: Catálogo y Registro de Ventas*
-  * **Oscar Xelhualt Tecalero** – *Módulo: Carrito de Compras*
+  * **Oscar Xelhua Tecalero** – *Módulo: Carrito de Compras*
   * **Vanessa Guzmán Herrera** – *Módulo: Gestión de Descuentos*
 # Guía de contribución
  
-Reglas de trabajo en equipo para este repositorio. Somos 4 personas, así que seguimos este flujo para evitar pisarnos el código entre nosotros.
+Reglas de trabajo en equipo para este repositorio. Somos 3 personas, así que seguimos este flujo para evitar pisarnos el código entre nosotros.
  
 ## Estructura de carpetas
  
@@ -18,8 +18,7 @@ PROGRAMACION_AVANZADA/
 ├── codigo_principal/          ← archivos principales del programa
 ├── funciones_complementarios/ ← funciones de apoyo reutilizables
 ├── Guias_y_apoyo/              ← material de referencia, apuntes, guías
-├── README.md
-├── CONTRIBUTING.md
+├── README.md                   <- material de guia para iniciar y subir actualizaciones 
 └── .gitignore
 ```
  
@@ -57,17 +56,6 @@ git push -u origin feature/tu-nombre
 ```
  
 Después de la primera vez, basta con `git push`.
- 
-### Convención de mensajes de commit
- 
-| Prefijo    | Cuándo usarlo                          |
-|------------|-----------------------------------------|
-| `feat:`    | Agregas una funcionalidad nueva         |
-| `fix:`     | Corriges un error                       |
-| `docs:`    | Cambios solo en documentación           |
-| `refactor:`| Reordenas código sin cambiar su función |
- 
-Ejemplo: `git commit -m "feat: agrega validación de usuario"`
  
 ## 4. Abrir un Pull Request
  
