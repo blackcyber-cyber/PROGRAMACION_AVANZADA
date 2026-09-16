@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
 """
+Created on Wed Sep 16 13:03:35 2026
+
+@author: hugoc
+"""
+"""
 Módulo de catálogo de productos.
 """
 
@@ -9,7 +14,7 @@ def cargar_catalogo():
         "P001": {"nombre": "🍵Café", "precio": 20.0, "stock": 20},
         "P002": {"nombre": "🫖Té", "precio": 25.0, "stock": 20},
         "P003": {"nombre": "🍪Galletas", "precio": 24.0, "stock": 40},
-        "P004": {"nombre": "🍫Chocolate", "precio": 53.5, "stock": 10},
+        "P004": {"nombre": "🍫Chocolate", "precio": 23.5, "stock": 10},
         "P005": {"nombre": "🫗Agua embotellada", "precio": 16.0, "stock": 60},
         "P006": {"nombre": "🥤Refresco 2L", "precio": 29.5, "stock": 40},
         "P007": {"nombre": "🍟Sabritas", "precio": 20.0, "stock": 70},
