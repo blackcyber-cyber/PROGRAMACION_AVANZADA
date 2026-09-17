@@ -104,3 +104,4 @@ def modificar_cantidad(carrito, catalogo, id_producto, nueva_cantidad):
     print(f"Error: El producto '{id_producto}' no está en el carrito.")
     return carrito
 
+# Modulo de gestion de carrito actualizado para entrega
