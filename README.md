@@ -105,7 +105,7 @@ Este repo usa la plantilla de Python. Ignora archivos temporales o generados aut
 - Antes de tocar un archivo que sabes que alguien más está usando, avisa en el chat del equipo.
 - Si dos personas van a trabajar en el mismo módulo, divídanse por funciones dentro del archivo para minimizar conflictos.
 
-##MODULOS A CREAR Y RESPONABLE:
+## MODULOS A CREAR Y RESPONABLE:
 -Los módulos necesarios para la práctica se dividen de la siguiente manera, respetando tiempos para la integración total
 ```bash
 PROGRAMACION_AVANZADA/
