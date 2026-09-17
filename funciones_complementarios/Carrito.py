@@ -14,7 +14,7 @@ de productos (lista) y garantiza la inmutabilidad de los pares
 identificador-cantidad (tupla), facilitando su modificación y filtrado.
 """
 
-def agregar_producto(carrito, catalogo, id_producto, cantidad):
+def agregar_producto(carrito: list, catalogo: dict, id_producto: str, cantidad: int) -> list:
     """
     Agrega un producto al carrito o actualiza su cantidad si ya existe,
     validando la disponibilidad de stock en el catálogo.
@@ -104,3 +104,4 @@ def modificar_cantidad(carrito, catalogo, id_producto, nueva_cantidad):
     print(f"Error: El producto '{id_producto}' no está en el carrito.")
     return carrito
 
+# Modulo de gestion de carrito actualizado para entrega
